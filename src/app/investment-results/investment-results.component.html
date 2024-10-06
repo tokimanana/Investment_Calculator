@@ -1,4 +1,4 @@
-@if (!results) {
+@if (!results()) {
 <p class="center">
   Please enter your investment details above to calculate your investment
   results.
@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    @for (result of results; track result.year) {
+    @for (result of results(); track result.year) {
       <tr>
         <td>{{ result.year }}</td>
         <td>{{ result.valueEndOfYear | currency:'Rs.' :'symbol':'1.0-0' }}</td>
